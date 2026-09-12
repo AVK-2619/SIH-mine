@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/AVK-2619/SIH-mine/issues"
   },
-  "homepage": "https://github.com/AVK-2619/SIH-mine#readme"
+  "homepage": "https://github.com/AVK-2619/SIH-mine#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.4"
+  }
 }

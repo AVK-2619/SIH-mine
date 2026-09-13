@@ -1,0 +1,27 @@
+<html>
+    <title>Login</title>
+    <head>
+        <link rel="stylesheet", href="../CSS/LoginPage.css">
+        <script src="../JS/LoginPage.js"></script>
+    </head>
+    <body>
+        <div id="LoginDiv">
+            <h1 id="LoginText">Login </h1>
+            <form>
+                Username: <br>
+                <input type="text", class="LoginInputs", id="LoginUsername"><br><br>
+                Password: <br>
+                <input type="password", class="LoginInputs", id="LoginPassword"><br><br>
+                User Type: <br>
+                <input type="radio", class="LoginInputs", id="LoginUserTypeS", value="StudentUser", name="LoginUserType", checked>
+                <label for="LoginUserTypeS">Student</label>
+                <input type="radio", class="LoginInputs", id="LoginUserTypeG", value="GraduateUser", name="LoginUserType">
+                <label for="LoginUserTypeG">Graduate</label>
+                <input type="radio", class="LoginInputs", id="LoginUserTypeC", value="CompanyUser", name="LoginUserType">
+                <label for="LoginUserTypeC">Company</label>
+            </form>
+            <button type="button", id="LoginButton", onclick="Login()">Login</button>
+            <button type="button", id="SignUpButton", onclick="SignUp()">Sign Up</button>
+        </div>
+    </body>
+</html>

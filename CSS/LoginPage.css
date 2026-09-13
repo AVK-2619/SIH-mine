@@ -1,0 +1,29 @@
+#LoginDiv{
+    width: 300px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    margin-top: 120px;
+    margin-left: 460px;
+    border: 1px solid black;
+    border-radius: 10%;
+}
+
+#LoginUsername{
+    width: 290px;
+}
+
+#LoginPassword{
+    width: 290px;
+}
+
+#LoginButton{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#SignUpButton{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}

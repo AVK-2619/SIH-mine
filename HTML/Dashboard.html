@@ -1,0 +1,26 @@
+<html>
+    <title>Dashboard</title>
+    <head>
+        <script src="../JS/Dashboard.js"></script>
+        <link rel="stylesheet", href="../CSS/Dashboard.css">
+    </head>
+    <body>
+        <div id="sidebar">
+            <h2>Menu:</h2>
+            <ul>
+                <li>halo</li>
+            </ul>
+        </div>
+        <div id="main">
+            halo
+        </div>
+    </body>
+    <script>
+        const ResponseData = JSON.parse(localStorage.getItem("Data"));
+        document.getElementById("Username").textContent = ResponseData.Username;
+        document.getElementById("CompanyName").textContent = ResponseData.CompanyName;
+        document.getElementById("Age").textContent = ResponseData.Age;
+        document.getElementById("Qualification").textContent = ResponseData.Qualification;
+        document.getElementById("Skills").textContent = ResponseData.Skills;
+    </script>
+</html>

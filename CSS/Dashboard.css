@@ -1,0 +1,15 @@
+#sidebar{
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+    border-right: 1px solid black;
+    margin: 0px;
+}
+
+#sidebar ul{
+    list-style: none;
+}
+
+#main{
+    margin-left: 220px;
+}

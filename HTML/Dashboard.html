@@ -2,13 +2,22 @@
     <title>Dashboard</title>
     <head>
         <script src="../JS/Dashboard.js"></script>
+        <link rel="stylesheet" href="../CSS/Dashboard.css">
     </head>
     <body>
-        <p id="Username"></p>
-        <p id="CompanyName"></p>
-        <p id="Age"></p>
-        <p id="Qualification"></p>
-        <p id="Skills"></p>
+        <div id="TopNav">
+            <ul id="TopNavList">
+                <li><a href="">Profile</a></li>
+                <li><a href="">Home</a></li>
+            </ul>
+        </div>
+        <div id="Content">
+            <p id="Username"></p>
+            <p id="CompanyName"></p>
+            <p id="Age"></p>
+            <p id="Qualification"></p>
+            <p id="Skills"></p>
+        </div>
     </body>
     <script>
         const ResponseData = JSON.parse(localStorage.getItem("Data"));

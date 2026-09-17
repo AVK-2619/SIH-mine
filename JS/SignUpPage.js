@@ -1,25 +1,13 @@
 function UserType(){
     const UserType = document.querySelector(`input[name="SignUpUserType"]:checked`).value;
-    const SandG = `
-    Age: <br>
-    <input type="number", class="SignUpInputs", id="SignUpAge"><br><br>
-    Qualification: <br>
-    <input type="text", class="SignUpInputs", id="SignUpQualification"><br> `;
-
-    const C = `
-    Company Name: <br>
-    <input type="text", class="SignUpInputs", id="SignUpCompanyName"><br><br>
-    Registration: <br>
-    <input type="radio", name="Registration", id="Registered", value="Registered", checked>
-    <label for="Registered">Registered</label>
-    <input type="radio", name="Registration", id="NotRegistered", value="NotRegistered", checked>
-    <label for="NotRegistered">Not Registered</label>`;
 
     if((UserType == "Student")||(UserType == "Graduate")){
-        document.getElementById("UserTypeSignUp").innerHTML = SandG;
+        document.getElementById("UserTypeSignUpSandG").style.display = "block";
+        document.getElementById("UserTypeSignUpC").style.display = "none";
     }
     else if(UserType == "Company"){
-        document.getElementById("UserTypeSignUp").innerHTML = C;
+        document.getElementById("UserTypeSignUpSandG").style.display = "none";
+        document.getElementById("UserTypeSignUpC").style.display = "block";
     }
 }
 

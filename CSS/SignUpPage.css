@@ -9,6 +9,14 @@
     border: 1px solid black;
 }
 
+#UserTypeSignUpSandG{
+    display: block;
+}
+
+#UserTypeSignUpC{
+    display: none;
+}
+
 .SignUpInputs{
     width: 280px;
 }

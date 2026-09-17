@@ -19,7 +19,6 @@ async function SignUp(){
     if((UserType == "Student") || (UserType == "Graduate")){
         const Age = document.getElementById("SignUpAge").value;
         const Qualification = document.getElementById("SignUpQualification").value;
-        console.log(Username, Password, Age, Qualification);
 
         const data = {
             Username: Username,

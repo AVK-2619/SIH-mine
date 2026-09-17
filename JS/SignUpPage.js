@@ -16,9 +16,19 @@ async function SignUp(){
     const Password = document.getElementById("SignUpPassword").value;
     const UserType = document.querySelector(`input[name="SignUpUserType"]:checked`).value;
 
+    if((Username == "") || (Password == "")){
+        window.alert("Fill all fields");
+        return;
+    }
+
     if((UserType == "Student") || (UserType == "Graduate")){
         const Age = document.getElementById("SignUpAge").value;
         const Qualification = document.getElementById("SignUpQualification").value;
+
+        if((Age == "") || (Qualification == "")){
+            window.alert("Fill all fields");
+            return;
+        }
 
         const data = {
             Username: Username,
@@ -43,6 +53,11 @@ async function SignUp(){
     else if (UserType == "Company"){
         const CompanyName = document.getElementById("SignUpCompanyName").value;
         const Registration = document.querySelector(`input[name="Registration"]:checked`).value;
+
+        if(CompanyName == ""){
+            window.alert("Fill all fields");
+            return;
+        }
 
         const data = {
             Username: Username,
@@ -70,3 +85,9 @@ async function SignUp(){
 function Login(){
     window.location.href="../HTML/LoginPage.html";
 }
+
+document.addEventListener("keydown", (event) => {
+    if(event.key == "Enter"){
+        SignUp();
+    }
+});

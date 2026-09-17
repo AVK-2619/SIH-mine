@@ -14,7 +14,7 @@ const connection = mysql.createConnection({
 
 app.post(`/Login`, (req, res) => {
     const {Username, Password, UserType} = req.body;
-    connection.query(`select UserID from Users where Username = "${Username}" and Password = "${Password}" and UserType = '${UserType}';`, (err, result) => {
+    connection.query(`select UserID from Users where binary Username = "${Username}" and binary Password = "${Password}" and UserType = '${UserType}';`, (err, result) => {
         if (err) return res.status(500).send(err);
         if(result.length == 0){
             res.json({text: "User does not exist"});
@@ -29,6 +29,7 @@ app.get(`/Login/:UserType/:UserID`, (req, res) => {
     const UserType = req.params.UserType;
     connection.query(`select Username, Age, Qualification, Skills, CompanyName from UserInfo where UserID = ${UserID} and UserType = '${UserType}'`, (err, result) => {
         if (err) return res.status(500).send(err);
+        result[0].UserType = UserType;
         res.json(result[0]);
     });
 });

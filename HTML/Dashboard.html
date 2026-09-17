@@ -6,25 +6,33 @@
     </head>
     <body>
         <div id="TopNav">
-            <ul id="TopNavList">
-                <li><a href="">Profile</a></li>
-                <li><a href="">Home</a></li>
-            </ul>
+            <button type="button", class="DashboardButtons", id="ProfileButton"><img src="../profilepic", id="ProfilePic"><p id="Username"></p></button>
+            <button type="button", class="DashboardButtons", id="HomeButton">Home</button>
+            <button type="button", class="DashboardButtons",  id="SignOutButton", onclick="SignOut()">Sign Out</button>
         </div>
         <div id="Content">
-            <p id="Username"></p>
-            <p id="CompanyName"></p>
-            <p id="Age"></p>
-            <p id="Qualification"></p>
-            <p id="Skills"></p>
+            
+            <p class="txt", id="CompanyName">Company Name: </p>
+            <p class="txt", id="Age">Age: </p>
+            <p class="txt", id="Qualification">Qualification: </p>
+            <p class="txt", id="Skills">Skills: </p>
         </div>
     </body>
     <script>
         const ResponseData = JSON.parse(localStorage.getItem("Data"));
-        document.getElementById("Username").textContent = ResponseData.Username;
-        document.getElementById("CompanyName").textContent = ResponseData.CompanyName;
-        document.getElementById("Age").textContent = ResponseData.Age;
-        document.getElementById("Qualification").textContent = ResponseData.Qualification;
-        document.getElementById("Skills").textContent = ResponseData.Skills;
+        document.getElementById("Username").textContent += ResponseData.Username;
+        document.getElementById("CompanyName").textContent += ResponseData.CompanyName;
+        document.getElementById("Age").textContent += ResponseData.Age;
+        document.getElementById("Qualification").textContent += ResponseData.Qualification;
+        document.getElementById("Skills").textContent += ResponseData.Skills;
+        console.log(ResponseData.UserType == "S");
+
+        if((ResponseData.UserType == 'S') || (ResponseData.UserType == "G")){
+            document.getElementById("Age").style.display = "block";
+            document.getElementById("Qualification").style.display = "block";
+            document.getElementById("Skills").style.display = "block";
+        } else if(ResponseData.UserType == "C"){
+            document.getElementById("CompanyName").style.display = "block";
+        }
     </script>
 </html>

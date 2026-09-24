@@ -30,7 +30,9 @@ app.get(`/Login/:UserType/:UserID`, (req, res) => {
     connection.query(`select Username, Age, Qualification, Skills, CompanyName from UserInfo where UserID = ${UserID} and UserType = '${UserType}'`, (err, result) => {
         if (err) return res.status(500).send(err);
         result[0].UserType = UserType;
-        res.json(result[0]);
+        result[0].UserID = UserID;
+        console.log(result);
+        res.json(result);
     });
 });
 
@@ -52,6 +54,13 @@ app.post(`/SignUpC`, (req, res) => {
         connection.query(`insert into UserInfo(UserID, Username, UserType,  CompanyName, Registration) values (${result[0]['count(*)']+1}, "${Username}", '${UserType}', "${CompanyName}", '${Registration}')`);
         res.redirect(`http://localhost:3000/Login/${UserType}/${result[0]['count(*)']+1}`);
     });
+});
+
+app.post(`/Edit`, (req, res) => {
+    const {NewUsername, OldUsername, Age, Qualification, UserID, UserType} = req.body;
+    connection.query(`update Users set Username="${NewUsername}" where Username="${OldUsername}";`);
+    connection.query(`update UserInfo set Username="${NewUsername}", Age=${Age}, Qualification="${Qualification}" where UserId=${UserID};`);
+    res.redirect(`http://localhost:3000/Login/${UserType}/${UserID}`)
 });
 
 app.listen(3000);

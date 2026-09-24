@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../CSS/Profile.css">
+        <script src="../JS/Dashboard.js"></script>
+        <script src="../JS/Profile.js"></script>
+    </head>
+    <title>Skills</title>
+    <body>
+        <div id="TopNav">
+            <button type="button", class="DashboardButtons", id="HomeButton", onclick='window.location.href="../HTML/Dashboard.html"'>Home</button>
+            <button type="button", class="DashboardButtons",  id="SignOutButton", onclick="SignOut()">Sign Out</button>
+        </div>
+        <div id="Content">
+            <button type="button", id="EditButton", onclick="Edit()">Edit <img src="../EditImg.png", id="EditImg"></button>
+            <img src="../profilepic", id="ProPic"><br>
+            <div id="InfoTxtDiv">
+                <p id="Username", class="InfoTxt">Username: </p>
+                <input type="text", id="UsernameEdit", class="EditInput"><br>
+                <p id="Age", class="InfoTxt">Age: </p>
+                <input type="number", id="AgeEdit", class="EditInput"><br>
+                <p id="Qualification", class="InfoTxt">Qualification: </p>
+                <input type="text", id="QualificationEdit", class="EditInput"><br>
+                <button type="button", id="EditSubmit", onclick="EditDone()">Submit</button>
+            </div>
+        </div>
+    </body>
+    <script src="../JS/Profile.js"></script>
+</html>

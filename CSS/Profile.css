@@ -1,0 +1,109 @@
+#TopNav{
+    width: 100%;
+    height: 38px;
+    position: sticky;
+    border-bottom: solid black 1px;
+    padding-top: 0%;
+    display: flex;
+}
+
+.DashboardButtons{
+    background-color: white;
+    border: none;
+    border-right: solid black 1px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16;
+    width: auto;
+    display: inline-flex;
+    padding-top: 10px;
+}
+
+.DashboardButtons:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+#ProfileButton{
+    padding: 0%;
+}
+
+#ProfileButton p{
+    padding-left: 5px;
+}
+
+#SignOutButton{
+    border: none;
+    border-left: solid black 1px;
+    margin-left: auto;
+}
+
+#ProfilePic{
+    border-radius: 100%;
+    height: 32px;
+    padding: 3px;
+    padding-left: 5px;
+}
+
+html, body{
+    margin: 0%;
+    padding: 0%;
+}
+
+#ProPic{
+    height: 200px;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#Content{
+    display: flex;
+    flex-direction: column;
+}
+
+#EditButton{
+    align-self: flex-end;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16;
+    padding-bottom: 5px;
+    border: solid black 1px;
+    border-top: none;
+}
+
+#EditButton:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+#EditImg{
+    height: 25px;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+#InfoTxtDiv{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+p{
+    margin-top: 7px;
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: bold;
+    display: inline;
+}
+
+.EditInput{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: none;
+}
+
+#EditSubmit{
+    margin-top: 5px;
+    display: none;
+}

@@ -79,11 +79,11 @@ async function SignUp(){
         localStorage.setItem("Data", JSON.stringify(ResponseData));
     }
     
-    window.location.href = "../HTML/Dashboard.html";
+    window.location.href = "HTML/Dashboard.html";
 }
 
 function Login(){
-    window.location.href="../HTML/LoginPage.html";
+    window.location.href="HTML/LoginPage.html";
 }
 
 document.addEventListener("keydown", (event) => {

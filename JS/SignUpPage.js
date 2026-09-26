@@ -79,7 +79,7 @@ async function SignUp(){
         localStorage.setItem("Data", JSON.stringify(ResponseData));
     }
     
-    window.location.href = "HTML/Dashboard.html";
+    window.location.href = "SIH-mine/HTML/Dashboard.html";
 }
 
 function Login(){

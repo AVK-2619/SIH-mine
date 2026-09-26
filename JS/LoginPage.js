@@ -25,7 +25,7 @@ async function Login(){
 }
 
 function SignUp(){
-    window.location.href = "../HTML/index.html"
+    window.location.href = "../index.html"
 }
 
 window.addEventListener("keydown", (event) => {

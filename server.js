@@ -6,9 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const connection = mysql.createConnection({
-    host: "127.0.0.1",
-    user: "babu",
-    password: "password",
+    host: "192.168.1.58",
+    port: 3306,
+    user: "Admin",
+    password: "R@hman786",
     database: "SIHGit"
 });
 
@@ -61,5 +62,11 @@ app.post(`/Edit`, (req, res) => {
     connection.query(`update UserInfo set Username="${NewUsername}", Age=${Age}, Qualification="${Qualification}" where UserId=${UserID};`);
     res.redirect(`http://localhost:3000/Login/${UserType}/${UserID}`)
 });
+
+app.get(`/Clear`, (req, res) => {
+    connection.query(`truncate table Users;`);
+    connection.query(`truncate table UserInfo;`);
+    res.send("Done");
+})
 
 app.listen(3000);

@@ -1,0 +1,43 @@
+<html>
+    <title>Sign Up</title>
+    <head>
+        <script src="JS/SignUpPage.js"></script>
+        <link rel="stylesheet", href="CSS/SignUpPage.css">
+    </head>
+    <body>
+        <div id="SignUpDiv">
+            <h1 id="SignUpText">Sign Up: </h1>
+            <form>
+                Username: <br>
+                <input type="text", class="SignUpInputs", id="SignUpUsername", autofocus><br><br>
+                Password: <br>
+                <input type="password", class="SignUpInputs", id="SignUpPassword"><br><br>
+                Acount Type: <br>
+                <input type="radio", name="SignUpUserType", id="Student", value="Student", onclick="UserType()", checked>
+                <label for="Student">Student</label>
+                <input type="radio", name="SignUpUserType", id="Graduate", value="Graduate", onclick="UserType()">
+                <label for="Graduate">Graduate</label>
+                <input type="radio", name="SignUpUserType", id="Compnay", value="Company", onclick="UserType()">
+                <label for="Company">Company</label>
+                <br><br>
+                <div id="UserTypeSignUpSandG">
+                    Age: <br>
+                    <input type="number", class="SignUpInputs", id="SignUpAge"><br><br>
+                    Qualification: <br>
+                    <input type="text", class="SignUpInputs", id="SignUpQualification"><br>
+                </div>
+                <div id="UserTypeSignUpC">
+                    Company Name: <br>
+                    <input type="text", class="SignUpInputs", id="SignUpCompanyName"><br><br>
+                    Registration: <br>
+                    <input type="radio", name="Registration", id="Registered", value="Registered", checked>
+                    <label for="Registered">Registered</label>
+                    <input type="radio", name="Registration", id="NotRegistered", value="NotRegistered", checked>
+                    <label for="NotRegistered">Not Registered</label>
+                </div>
+            </form>
+            <button type="button", id="SignUpButton", onclick="SignUp()">Sign Up</button>
+            <button type="button", id="LoginButton", onclick="Login()">Login</button>
+        </div>
+    </body>
+</html>

@@ -31,7 +31,6 @@ app.get(`/Login/:UserType/:UserID`, (req, res) => {
         if (err) return res.status(500).send(err);
         result[0].UserType = UserType;
         result[0].UserID = UserID;
-        console.log(result);
         res.json(result);
     });
 });

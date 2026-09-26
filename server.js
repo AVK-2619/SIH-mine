@@ -41,6 +41,7 @@ app.post(`/SignUpSandG`, (req, res) => {
     connection.query(`select count(*) from Users;`, (err, result) => {
         if(err) return res.status(500).send(err);
         connection.query(`insert into Users values (${result[0]['count(*)']+1}, "${Username}", "${Password}", '${UserType}')`);
+        connection.query(`insert into Skills values (${result[0]['count(*)']+1}, 0, 0, 0, 0, 0)`);
         connection.query(`insert into UserInfo(UserID, Username, UserType, Age, Qualification) values (${result[0]['count(*)']+1}, "${Username}", '${UserType}', ${Age}, "${Qualification}")`);
         res.redirect(`http://localhost:3000/Login/${UserType}/${result[0]['count(*)']+1}`);
     });
@@ -51,6 +52,7 @@ app.post(`/SignUpC`, (req, res) => {
     connection.query(`select count(*) from Users;`, (err, result) => {
         if(err) return res.status(500).send(err);
         connection.query(`insert into Users values (${result[0]['count(*)']+1}, "${Username}", "${Password}", '${UserType}')`);
+        connection.query(`insert into Skills values (${result[0]['count(*)']+1}, 0, 0, 0, 0, 0)`);
         connection.query(`insert into UserInfo(UserID, Username, UserType,  CompanyName, Registration) values (${result[0]['count(*)']+1}, "${Username}", '${UserType}', "${CompanyName}", '${Registration}')`);
         res.redirect(`http://localhost:3000/Login/${UserType}/${result[0]['count(*)']+1}`);
     });
@@ -66,7 +68,15 @@ app.post(`/Edit`, (req, res) => {
 app.get(`/Clear`, (req, res) => {
     connection.query(`truncate table Users;`);
     connection.query(`truncate table UserInfo;`);
+    connection.query(`truncate table Skills;`);
     res.send("Done");
-})
+});
+
+app.get(`/GetSkills/:UserID`, (req, res) => {
+    const UserID = req.params.UserID;
+    connection.query(`select Java, Python, C, Html, Css from Skills where UserID=${UserID};`, (err, result) => {
+        res.json(result[0]);
+    });
+});
 
 app.listen(3000);

@@ -1,3 +1,8 @@
+function SignOut(){
+    localStorage.removeItem("Data");
+    window.location.href = "../HTML/LoginPage.html";
+}
+
 function Edit(){
     const ResponseData = JSON.parse(localStorage.getItem("Data"));
     document.getElementById("Username").textContent = "Username: ";

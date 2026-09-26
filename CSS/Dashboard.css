@@ -64,3 +64,25 @@ html, body{
 #Content .txt{
     display: none;
 }
+
+.Skills{
+    background-color: white;
+    border: solid black 1px;
+    margin-top: 20px;
+    text-align: left;
+    padding: 7px;
+    width: fit-content;
+}
+
+.Skills:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.Skills progress{
+    height: 20px;
+    width: 150px;
+}
+
+p{
+    margin: 0;
+}

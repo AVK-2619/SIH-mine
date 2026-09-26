@@ -63,4 +63,10 @@ app.post(`/Edit`, (req, res) => {
     res.redirect(`http://localhost:3000/Login/${UserType}/${UserID}`)
 });
 
+app.get(`/Clear`, (req, res) => {
+    connection.query(`truncate table Users;`);
+    connection.query(`truncate table UserInfo;`);
+    res.send("Done");
+})
+
 app.listen(3000);
